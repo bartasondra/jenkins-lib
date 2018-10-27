@@ -7,9 +7,10 @@ def call(Map project) {
 			stage('xx') {
 				steps{
 				script {
-				dockerBuild(name: $project.name, version: $project.version, registry: $project.registry)
+					echo "$project.registry/$project.name:$project.version"
+				//dockerBuild(name: $project.name, version: $project.version, registry: $project.registry)
 
-				dockerPush(name: $project.name, version: $project.version, registry: $project.registry)
+				//dockerPush(name: $project.name, version: $project.version, registry: $project.registry)
 				}
 				}
 			}
