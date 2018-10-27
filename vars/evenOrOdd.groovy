@@ -1,10 +1,10 @@
 // vars/evenOrOdd.groovy
-def call(int buildNumber) {
+def call(int buildNumber, name) {
   if (buildNumber % 2 == 0) {
     pipeline {
       agent any
       stages {
-        stage('Even Stage') {
+        stage("Even $name Stage") {
           steps {
             echo "The build number is even"
           }
@@ -15,7 +15,7 @@ def call(int buildNumber) {
     pipeline {
       agent any
       stages {
-        stage('Odd Stage') {
+        stage("Odd $name Stage") {
           steps {
             echo "The build number is odd"
           }
