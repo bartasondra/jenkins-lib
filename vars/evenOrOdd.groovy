@@ -4,9 +4,10 @@ def call(int buildNumber, name) {
     pipeline {
       agent any
       stages {
-        stage("Even $name Stage") {
+        stage('Even Stage') {
           steps {
             echo "The build number is even"
+            echo "$name"
           }
         }
       }
@@ -15,9 +16,9 @@ def call(int buildNumber, name) {
     pipeline {
       agent any
       stages {
-        stage("Odd $name Stage") {
+        stage('Odd Stage') {
           steps {
-            echo "The build number is odd"
+            echo "The build number is odd $name"
           }
         }
       }
