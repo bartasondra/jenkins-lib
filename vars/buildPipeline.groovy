@@ -4,9 +4,15 @@ def call(Map project) {
 		agent any 		
 		
 		stages{
-			dockerBuild(name: $project.name, version: $project.version, registry: $project.registry)
+			stage('xx') {
+				script {
+				dockerBuild(name: $project.name, version: $project.version, registry: $project.registry)
 
-			dockerPush(name: $project.name, version: $project.version, registry: $project.registry)
+				dockerPush(name: $project.name, version: $project.version, registry: $project.registry)
+				
+				}
+			}
+			
 		} 
 	}
 }	
