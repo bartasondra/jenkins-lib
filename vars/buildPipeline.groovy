@@ -5,11 +5,12 @@ def call(Map project) {
 		
 		stages{
 			stage('xx') {
+				steps{
 				script {
 				dockerBuild(name: $project.name, version: $project.version, registry: $project.registry)
 
 				dockerPush(name: $project.name, version: $project.version, registry: $project.registry)
-				
+				}
 				}
 			}
 			
